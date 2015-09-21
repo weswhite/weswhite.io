@@ -1,0 +1,30 @@
+#page-wrapper{
+    font-family: Helvetica Nue;
+    background-color: #292426;
+}
+.sliding-panel{
+    height: 400px;
+    color: white;
+    padding: 20px 20px 20px 20px;
+}
+#first-panel{
+    background-color: #E26A71;
+}
+#second-panel{
+    background-color: #F2B33F;
+}
+#third-panel{
+    background-color: #009D86;
+}
+#fourth-panel{
+    background-color: #B0ADA9;
+}
+#fifth-panel{
+    background-color: #E26A71;
+}
+
+
+
+
+
+
