@@ -377,8 +377,8 @@ a.resume-button {
     font-size: 0.6rem;
     line-height: 0.4rem;
     text-transform: uppercase;
-    background: #3CB8CF;
-    color: #40727B !important;
+    background: transparent;
+    color: #3CB8CF !important;
     border-radius: 0.8rem;
     font-weight: 700;
     border: 2px solid #3CB8CF;
@@ -386,8 +386,8 @@ a.resume-button {
     transition: all 0.5s ease-out;
 }
 a.resume-button:hover {
-    background: transparent;
-    color: #3CB8CF !important;
+    background: #3CB8CF;
+    color: #40727B !important;
 }
 a.resume-button i {
     font-size: 1rem;
