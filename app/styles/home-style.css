@@ -16,7 +16,7 @@
 html, body {
     font-family: 'Raleway', helvetica, arial, sans-serif;
     text-align: center;
-    color: #2C4E54;
+    color: #3CB8CF;
     background: #DEDBDE;
     font-weight: 100;
     -webkit-font-smoothing: antialiased;
@@ -254,7 +254,7 @@ a.more i.icon-arrow {
 }
 .logo i.icon-w {
     font-size: 100px;
-    color: #40727B;
+    color: #3CB8CF;
 }
 @media (max-width: 569px) {
     .logo i.icon-w {
@@ -264,7 +264,7 @@ a.more i.icon-arrow {
 h1.welcome-heading {
     font-size: 2.6rem;
     line-height: 2.4rem;
-    color: #40727B;
+    color: #3CB8CF;
 }
 h1.welcome-heading em {
     display: block;
@@ -316,12 +316,12 @@ h1.welcome-heading small {
 a.work-link {
     display: inline-block;
     vertical-align: top;
-    color: #2C4E54;
+    color: #3CB8CF;
     width: 30%;
     transition: all 0.5s ease-out;
 }
 a.work-link:hover {
-    color: #40727B;
+    color: #3CB8CF;
     background: -webkit-linear-gradient(#636163, #A5A4A6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -404,7 +404,7 @@ a.resume-button i {
 }
 .contact-link {
     font-size: 5rem;
-    color: #2C4E54;
+    color: #40727B;
     margin: 0 1rem;
     transition: all 0.5s ease-out;
     display: block;
@@ -415,7 +415,7 @@ a.resume-button i {
     }
 }
 .contact-link:hover {
-    color: #40727B;
+    color: #3CB8CF;
     background: -webkit-linear-gradient(#636163, #DEDBDE);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
