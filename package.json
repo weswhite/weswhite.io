@@ -1,0 +1,25 @@
+{
+  "name": "weswhite.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "post": "postcss --use autoprefixer -c options.json -o main.css css/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weswhite/weswhite.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weswhite/weswhite.io/issues"
+  },
+  "homepage": "https://github.com/weswhite/weswhite.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "npm-run-all": "^1.7.0",
+    "postcss": "^5.0.19"
+  }
+}
