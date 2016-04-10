@@ -1,2 +1,104 @@
 /* Main CSS */
 
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Raleway', sans-serif;;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: 'Raleway', monospace;
+    font-weight: 700;
+}
+
+body {
+    background: -webkit-linear-gradient(white, #A5A4A6);
+    color: black;
+}
+
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.my-photo {
+    margin-top: 25px;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    border: 4px solid #FF4136;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: url('./avatar.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.my-photo:hover {
+    transition: all 0.3s ease-out;
+    border-color: #01FF70;
+}
+
+@media
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+    .my-photo {
+        background: url('https://secure.gravatar.com/avatar/e421e88e9248d199ac126fb56941b0e3?size=500px') center no-repeat;
+        background-size: 250px;
+    }
+}
+
+.name {
+    font-size: 62px;
+    text-align: center;
+    font-weight: 100;
+}
+
+/* links */
+.links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.links .links-text {
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
+.links a {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    font-size: 25px;
+    text-decoration: none;
+    color: #FF4136;
+    font-weight: 700;
+}
+
+.links a:hover {
+    color: #01FF70;
+    transition: all 0.25s ease-out
+}
