@@ -13,7 +13,6 @@
 }
 
 html, body {
-    height: 100%;
     width: 100%;
 
     -webkit-font-smoothing: antialiased;
@@ -21,11 +20,12 @@ html, body {
     text-rendering: optimizeLegibility;
     font-family: 'Raleway', monospace;
     font-weight: 700;
+
+    margin: 0px 0px 0px 0px;
 }
 
 body {
-    background: -webkit-linear-gradient(white, #A5A4A6);
-    color: black;
+    background: -webkit-linear-gradient(#FFFFF3, #566270);
 }
 
 .table {
@@ -45,7 +45,7 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    border: 4px solid #FF4136;
+    border: 4px solid #FFFFF3;
 
     display: block;
     margin-left: auto;
@@ -57,24 +57,22 @@ body {
 
 .my-photo:hover {
     transition: all 0.3s ease-out;
-    border-color: #01FF70;
+    border-color: #79ff4a;
 }
 
-@media
-only screen and (-moz-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-    .my-photo {
-        background: url('https://secure.gravatar.com/avatar/e421e88e9248d199ac126fb56941b0e3?size=500px') center no-repeat;
-        background-size: 250px;
-    }
-}
 
 .name {
     font-size: 62px;
     text-align: center;
     font-weight: 100;
+    color: #566270;
+}
+
+.title {
+    font-size: 58px;
+    text-align: center;
+    font-weight: 900;
+    color: #566270;
 }
 
 /* links */
@@ -86,6 +84,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .links .links-text {
     font-size: 30px;
     padding-bottom: 15px;
+    color: #FFFFF3;
 }
 
 .links a {
@@ -94,11 +93,61 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
     font-size: 25px;
     text-decoration: none;
-    color: #FF4136;
+    color: #E0E3DA;
     font-weight: 700;
 }
 
 .links a:hover {
-    color: #01FF70;
+    color: #79ff4a;
     transition: all 0.25s ease-out
+}
+
+
+/* Modal */
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 20px;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 5px;
+    width: 19px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close:hover {
+    background: #79ff4a;
+    color: #000;
 }
