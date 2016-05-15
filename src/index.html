@@ -11,56 +11,86 @@
     <link rel="stylesheet" href="./main.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:900,400,100' rel='stylesheet' type='text/css'>
 
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    <link rel="stylesheet" type="text/css" href="circlemenu.css" />
+    <script src="../node_modules/snapsvg/dist/snap.svg-min.js"></script>
+    <script src="classie.js"></script>
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
 
     <![endif]-->
 </head>
+<body class="theme-9">
+<div class="container">
+    <div class="main">
+        <header class="codrops-header">
+            <h1>Wes White <span>JavaScript Engineer</span></h1>
+        </header>
+        <nav id="menu" class="menu">
+					<span class="morph-shape" data-morph-active="M251,150c0,93.5-29.203,143-101,143S49,243.5,49,150C49,52.5,78.203,7,150,7S251,51.5,251,150z">
+						<svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="none">
+                            <path d="M281,150c0,71.797-59.203,131-131,131S19,221.797,19,150S78.203,19,150,19S281,78.203,281,150z"/>
+                        </svg>
+					</span>
+            <button class="trigger"><i class="fa fa-fw fa-share"></i><span>Share This</span></button>
+            <ul class="menu__items">
+                <li><a class="link" href="https://us.sogeti.com" target="_blank"> Resume</a></li>
+                <li><a class="link" href="https://www.linkedin.com/pub/wes-white/88/21/987" target="_blank">LinkedIn</a></li>
+                <li><a class="link" href="https://github.com/weswhite" target="_blank">Github</a></li>
+                <li><a class="link" href="https://twitter.com/westealwhite" target="_blank">Twitter</a></li>
+                <li><a class="link" href="https://instagram.com/wes_white" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </div><!-- /main -->
+</div><!-- /container -->
+<script>
+    (function() {
 
-<body>
-<div class="table">
-    <div class="cell">
-        <div class="content">
-            <div class="name">Wes White</div>
-            <div class="title">JavaScript Engineer</div>
-            <a href="#about" class="my-photo"><span class="caption">About</span></a>
-            <div class="links">
-                <a class="link" href="https://us.sogeti.com" target="_blank"> Resume</a>
-                <a class="link" href="https://www.linkedin.com/pub/wes-white/88/21/987" target="_blank">LinkedIn</a>
-                <a class="link" href="https://github.com/weswhite" target="_blank">Github</a>
-                <a class="link" href="https://twitter.com/westealwhite" target="_blank">Twitter</a>
-                <a class="link" href="https://instagram.com/wes_white" target="_blank">Instagram</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="about" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>About Me</h2>
-        <p>Hi, my name is Wes! I solve problems for my career. But I did not always enjoy facing obstacles everyday.
-            It is some thing that I have learned to do. I went to school at Texas A&M and study business (yeah, I did
-            not quite know what I wanted to do everyday yet). I took a summer job with an oil company that taught me
-            what I did not want to do. They company had two developers. Two. They worked on a rig metrics iOS app.
-            That is when I said, "I want to write software."</p>
+        function SVGMenu( el, options ) {
+            this.el = el;
+            this.init();
+        }
 
-        <p>Engineering software is tough. Quickly, at my first gig I ran into challenge after challenge. And without
-            a lot of experience or confidence to fallback on, I soon found myself with a very bruised ego. But while struggling
-            with code, people, clients, expectations, I discovered something. I discovered failure produces growth. Analyzing
-            conflicts refines character. And arguably best of all, a few defects are not the end of the world.</p>
+        SVGMenu.prototype.init = function() {
+            this.trigger = this.el.querySelector( 'button.trigger' );
+            this.shapeEl = this.el.querySelector( 'span.morph-shape' );
 
-        <p>See, software has taught me that struggling at something is ok. Sucking at something is the first step to being kind
-            of good at something. But is still not easy. But when I look at it growth from server driven, object-oriented apps to
-            client-side functionally programmed apps, I begin to see what is possible when someone sees challenges and embrasses
-            the hard stuff for what it is.</p>
+            var s = Snap( this.shapeEl.querySelector( 'svg' ) );
+            this.pathEl = s.select( 'path' );
+            this.paths = {
+                reset : this.pathEl.attr( 'd' ),
+                active : this.shapeEl.getAttribute( 'data-morph-active' )
+            };
 
-        <p>I love searching for all the variables of a complex situation to get to the root of why things are the way they are.
-            I do this without being conscious of it. Why did this team succeed and this time struggle? What was great about
-            his or her leadership? Where can I improve myself so that I can work more effectively with others? It's fun and I
-            gravitate towards impactful people and challenges. While I did not know all of this when I started, it is why I enjoy
-            dedicating myself to growth everyday.</p>
+            this.isOpen = false;
 
-    </div>
-</div>
+            this.initEvents();
+        };
+
+        SVGMenu.prototype.initEvents = function() {
+            this.trigger.addEventListener( 'click', this.toggle.bind(this) );
+        };
+
+        SVGMenu.prototype.toggle = function() {
+            var self = this;
+
+            if( this.isOpen ) {
+                classie.remove( this.el, 'menu--open' );
+            }
+            else {
+                setTimeout( function() { classie.add( self.el, 'menu--open' ); }, 175 );
+            }
+
+            this.pathEl.stop().animate( { 'path' : this.paths.active }, 150, mina.easein, function() {
+                self.pathEl.stop().animate( { 'path' : self.paths.reset }, 800, mina.elastic );
+            } );
+
+            this.isOpen = !this.isOpen;
+        };
+
+        new SVGMenu( document.getElementById( 'menu' ) );
+
+    })();
+</script>
 </body>
 </html>
