@@ -25,7 +25,7 @@ html, body {
 }
 
 body {
-    background: -webkit-linear-gradient(#FFFFF3, #00676e);
+    background: -webkit-linear-gradient(#FFFFF3, #566270);
 }
 
 .table {
@@ -57,21 +57,10 @@ body {
 
 .my-photo:hover {
     transition: all 0.3s ease-out;
-    border-color: #ff145a;
-    box-shadow: 1px 1px 2px #13958b, 0 0 25px #FFFFF3
+    border-color: #79ff4a;
+    box-shadow: 1px 1px 2px #566270, 0 0 25px #FFFFF3
 }
-.caption {
-    display: none;
-    position: absolute;
-    top: 0px;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    line-height: 1.1em;
-}
-a:hover .caption {
-    display: block;
-}
+
 
 .name {
     font-size: 62px;
@@ -85,21 +74,8 @@ a:hover .caption {
     text-align: center;
     font-weight: 900;
     color: #566270;
-    background-image: -webkit-linear-gradient(92deg, #007b05, #79ff4a );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 60s infinite;
 }
 
-@-webkit-keyframes hue {
-    from {
-        -webkit-filter: hue-rotate(0deg);
-    }
-
-    to {
-        -webkit-filter: hue-rotate(-360deg);
-    }
-}
 /* links */
 .links {
     margin-top: 30px;
@@ -126,7 +102,7 @@ a:hover .caption {
 
 .link:hover {
     display: inline-block;
-    color: #ff145a;
+    color: #79ff4a;
     transition: all 0.25s ease-out;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
