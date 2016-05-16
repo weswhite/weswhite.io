@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/weswhite/weswhite.io/issues"
   },
-  "homepage": "https://github.com/weswhite/weswhite.io#readme"
+  "homepage": "https://github.com/weswhite/weswhite.io#readme",
+  "dependencies": {
+    "snapsvg": "^0.4.0"
+  }
 }
