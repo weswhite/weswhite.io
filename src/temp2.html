@@ -63,22 +63,6 @@
         </defs>
     </svg>
 
-
-    <svg width="500" height="250">
-        <defs>
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo" />
-                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-            </filter>
-            <clipPath id="circleView">
-                <circle cx="250" cy="125" r="125" fill="#FFFFFF" />
-            </clipPath>
-        </defs>
-        <image width="500" height="250" xlink:href="avatar.jpg" clip-path="url(#circleView)" />
-
-    </svg>
-
 </div><!-- /container -->
 <script src="js/jquery.min.js"></script>
 <script src="js/TweenMax.min.js"></script>
